@@ -1,0 +1,65 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "product-service-dev",
+    "version" : "2022-07-17T15:16:31Z"
+  },
+  "servers" : [ {
+    "url" : "https://rgh8wzh499.execute-api.eu-west-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "/dev"
+      }
+    }
+  } ],
+  "paths" : {
+    "/products/{productId}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:902824272876:function:product-service-dev-getProduct/invocations",
+          "passthroughBehavior" : "when_no_match"
+        }
+      }
+    },
+    "/products" : {
+      "get" : {
+        "x-amazon-apigateway-integration" : {
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:902824272876:function:product-service-dev-getProductsList/invocations",
+          "passthroughBehavior" : "when_no_match"
+        }
+      }
+    },
+    "/product/{productId}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "productId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:902824272876:function:product-service-dev-getProduct/invocations",
+          "passthroughBehavior" : "when_no_match"
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-amazon-apigateway-minimum-compression-size" : 1024
+}
