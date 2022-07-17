@@ -6,7 +6,7 @@ import getProductsList from '@functions/getProductsList';
 const serverlessConfiguration: AWS = {
   service: 'product-service',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-plugin-swagger-ui'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -33,6 +33,21 @@ const serverlessConfiguration: AWS = {
       define: { 'require.resolve': undefined },
       platform: 'node',
       concurrency: 10,
+    },
+    swaggerUi: {
+      exportType: 'oas30',
+      accepts: 'application/json',
+      extensions: 'integrations',
+      swaggerUiDirectoryName: '.swagger-ui',
+      swaggerUiConfig: {
+        dom_id: '#swagger-ui',
+        deepLinking: 'true',
+        presets: [
+          'SwaggerUIBundle.presets.apis',
+          'SwaggerUIStandalonePreset',
+        ],
+        layout: 'StandaloneLayout',
+      },
     },
   },
 };
