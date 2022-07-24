@@ -8,7 +8,7 @@ const getProductHandler: ValidatedEventAPIGatewayProxyEvent<{}> = async (event) 
 
   if (products[productId]) {
     return formatJSONResponse({
-      product: products[productId],
+      result: products[productId],
     });
   } else {
     return formatErrorResponse('No such a product found!', 404);

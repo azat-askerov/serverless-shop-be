@@ -1,32 +1,32 @@
 export default [
     {
         id: 0,
-        title: "First product",
-        description: "Hello, world! It's my description",
-        price: 1000
+        title: "Satisfactory",
+        description: "Build your own awesome factory!",
+        price: 20
     },
     {
         id: 1,
-        title: "First product",
-        description: "Hello, world! It's my description",
-        price: 1000
+        title: "Cities Skylines",
+        description: "Here you can build your own city!",
+        price: 25
     },
     {
         id: 2,
-        title: "First product",
-        description: "Hello, world! It's my description",
-        price: 1000
+        title: "Spore",
+        description: "Build your own world!",
+        price: 10
     },
     {
         id: 3,
-        title: "First product",
-        description: "Hello, world! It's my description",
-        price: 1000
+        title: "Simcity 2000",
+        description: "And again, let's build city",
+        price: 10
     },
     {
         id: 4,
-        title: "First product",
-        description: "Hello, world! It's my description",
-        price: 1000
+        title: "Civilization",
+        description: "Let's build some history",
+        price: 20
     },
 ]

@@ -5,7 +5,7 @@ import products from '../../mocks/products';
 
 const getProductsList: ValidatedEventAPIGatewayProxyEvent<{}> = async (event) => {
   return formatJSONResponse({
-    products,
+    result: products,
   });
 };
 
